@@ -1,10 +1,10 @@
-// script.js
-
 const subtitles = [
-  "This is the first line of the subtitle.",
-  "And this is the second line of the subtitle.",
-  "Here is the third line of the subtitle.",
-  "Finally, this is the fourth line.",
+  "Con người thích cười, điều này là rõ ràng và dễ hiểu",
+  "do đó con người sẽ tìm cách chọc cười nhau càng nhiều càng tốt",
+  "điều này đã trở nên quen thuộc và hiển nhiên",
+  "Thế nhưng có một điều mà vẫn còn ít người trong chúng ta quan tâm đến",
+  "đó là hậu quả gì sẽ xảy ra nếu chỉ vì mục đích được cười",
+  "liệu con người có sẵn sàng giải trí hoá mọi thứ trong xã hội này?",
 ];
 
 let currentIndex = 0;
@@ -33,7 +33,7 @@ function showNextLetter() {
       currentIndex++;
     }
 
-    setTimeout(showNextLetter, 300);
+    setTimeout(showNextLetter, 200);
   }
 }
 
