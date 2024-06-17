@@ -4,46 +4,25 @@ body {
   align-items: center;
   height: 100vh;
   margin: 0;
-  background-color: #000;
   color: #fff;
-  font-family: Arial, sans-serif;
+  background: #333;
 }
 
-.video-container {
-  position: relative;
-  width: 640px;
-  height: 360px;
-  background-color: #333;
+#typing {
+  color: #fff;
+  font-family: serif;
+  border-right: 0.15em solid;
+  letter-spacing: 0.15em;
+  font-size: xx-large;
+  animation: cursor-effect 0.8s step-start infinite;
 }
 
-.video-placeholder {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 24px;
-  color: #bbb;
-}
-
-#subtitle-container {
-  position: absolute;
-  bottom: 20px;
-  width: 100%;
-  font-size: 18px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 0.1rem;
-}
-
-.subtitle-line {
-  width: fit-content;
-  overflow: hidden;
-  white-space: nowrap;
-  padding: 0 0.3rem;
-  text-overflow: ellipsis;
-  background: rgba(0, 0, 0, 0.5);
-  border-radius: 0.2rem;
+@keyframes cursor-effect {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: white;
+  }
 }

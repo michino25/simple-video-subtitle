@@ -1,41 +1,29 @@
-const subtitles = [
-  "Con người thích cười",
-  "điều này là rõ ràng và dễ hiểu",
-  "điều này đã trở nên quen thuộc và hiển nhiên",
+const data = [
+  "nhập câu 1, rồi xóa",
+  "nhập thêm câu nữa, rồi lại xóa",
+  "rảnh nên nhập thêm, xong xóa tiếp",
 ];
 
-let currentIndex = 0;
-let subtitleText = [];
+var speed = 120;
+const p = document.getElementById("typing");
 
-const line = document.getElementById("line");
+const delay = (timeout) => {
+  return new Promise((resolve) => setTimeout(resolve, timeout));
+};
 
-var i = 0;
-var speed = 50;
-
-function typeWriter() {
-  if (i < txt.length) {
-    document.getElementById("demo").innerHTML += txt.charAt(i);
-    i++;
-    setTimeout(typeWriter, speed);
-  }
-}
-
-typeWriter();
-
-function showNextLetter() {
-  if (currentIndex < subtitles.length) {
-    let currentSubtitle = subtitles[currentIndex].split("");
-
-    if (subtitleText.length < currentSubtitle.length) {
-      subtitleText = subtitleText.concat(currentSubtitle[subtitleText.length]);
-      line.textContent = subtitleText.join("");
+const typeEffect = async () => {
+  for (let i = 0; i < data.length; i++) {
+    for (let j = 0; j < data[i].length; j++) {
+      p.innerHTML += data[i].charAt(j);
+      await delay(speed);
     }
-  } else {
-    line.textContent = subtitleText.join("");
-    currentIndex++;
+    await delay(speed * 4);
+    for (let k = 0; k < data[i].length; k++) {
+      p.innerHTML = p.innerHTML.slice(0, -1);
+      await delay(speed / 4);
+    }
+    await delay(speed);
   }
+};
 
-  setTimeout(showNextLetter, 50);
-}
-
-showNextLetter();
+typeEffect();
